@@ -1,0 +1,205 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+        }
+        .style2
+        {
+            color: #FFFFFF;
+            background-color: #3B5998;
+        }
+        .style3
+        {
+            color: #FFFFFF;
+            font-size: x-large;
+            width: 135px;
+            background-color: #3B5998;
+        }
+        .style4
+        {
+            width: 135px;
+            height:124px;
+            color: #FFFFFF;
+            background-color: #E5E8F1;
+        }
+        .style5
+        {
+            width: 100px;
+        }
+        .style7
+        {}
+        .style8
+        {
+            width: 60px;
+        }
+        .style9
+        {}
+        .style10
+        {
+            width: 133px;
+        }
+        .style13
+        {
+            width: 135px;
+            color: #3B5998;
+            background-color: #E5E8F1;
+        }
+        .style14
+        {
+            color: #FFFFFF;
+            background-color: #3B5998;
+            width: 321px;
+        }
+        .style15
+        {
+            font-family: Georgia;
+            font-size: large;
+        }
+        .style16
+        {
+            color: #FFFFFF;
+            background-color: #3B5998;
+            font-family: Georgia;
+            font-size: large;
+        }
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table align="center" cellpadding="0" cellspacing="0" class="style1" 
+            border="0px" width="100%">
+            <tr>
+                <td class="style3">
+                    <strong>KAYABOOK</strong></td>
+                <td align="center" class="style2">
+                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <asp:Button ID="Button6" runat="server" onclick="Button6_Click" Text="Button" />
+                </td>
+                <td align="center" class="style2">
+&nbsp;</td>
+                <td align="center" class="style14">
+                    <asp:Button ID="Button1" runat="server" CssClass="style16" 
+                        onclick="Button1_Click" Text="Anasayfa" Width="75px" />
+                    <asp:Button ID="Button2" runat="server" CssClass="style16" 
+                        onclick="Button2_Click" Text="profil" Width="75px" />
+                    <asp:Button ID="Button3" runat="server" CssClass="style16" 
+                        onclick="Button3_Click" Text="mesajlar" Width="75px" />
+                    <asp:Button ID="Button4" runat="server" CssClass="style16" Text="İstekler" 
+                        Width="75px" onclick="Button4_Click" />
+                </td>
+                <td align="center" class="style2">
+                    <asp:Button ID="Button5" runat="server" CssClass="style15" 
+                        onclick="Button5_Click" style="color: #FFFFFF; background-color: #3B5998" 
+                        Text="çıkış" Width="75px" />
+                </td>
+            </tr>
+            <tr>
+                <td class="style3">
+                    <asp:Label ID="Label7" runat="server" style="font-size: small" Text="Label"></asp:Label>
+                </td>
+                <td align="center" class="style2" colspan="3">
+                    <asp:Label ID="Label1" runat="server" 
+                        style="font-size: x-large; font-weight: 700" Text="Label"></asp:Label>
+&nbsp;<asp:Label ID="Label2" runat="server" style="font-size: x-large; font-weight: 700" 
+                        Text="Label"></asp:Label>
+                </td>
+                <td align="center" class="style2">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style4">
+                    <asp:Image ID="Image1" runat="server" Height="124px" Width="135px" />
+                </td>
+                <td colspan="3" rowspan="2">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" >
+        
+        </asp:ContentPlaceHolder>
+                </td>
+                <td rowspan="4" style="background-color: #E5E8F1">
+                    <table cellpadding="0" cellspacing="0" class="style5">
+                        <tr background-color= "#E5E8F1">
+                            <td style="color: #3B5998; background-color: #E5E8F1">
+                                <asp:DataList ID="DataList1" runat="server" style="color: #3B5998; background-color: #E5E8F1;" 
+                                    DataKeyField="UyeID" Height="462px" CaptionAlign="Top">
+                                    <HeaderTemplate>
+                                        Tanıyor Olabileceğin Kişiler
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <table align="center" cellpadding="0" cellspacing="0" class="style7">
+                                            <tr>
+                                                <td class="style8" rowspan="2">
+                                                    <img alt="" src="images/<%#Eval("foto")%>" style="height: 64px; width: 60px" />
+                                                </td>
+                                                <td class="style10">
+                                                    <asp:Label ID="Label3" runat="server" style="font-size: small" ><%#Eval("adi")%></asp:Label>
+                                                    <asp:Label ID="Label4" runat="server" style="font-size: small" ><%#Eval("soyadi")%></asp:Label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="style10">
+                                                    <a href="Default.aspx?Kisi=<%#Eval("uyeID")%>" >Arkadaşı Ekle</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </ItemTemplate>
+                                </asp:DataList>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="style13">
+                    mesajlar</td>
+            </tr>
+            <tr>
+                <td class="style13">
+                    profil düzenle</td>
+                <td colspan="3">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style4">
+                    <asp:DataList ID="DataList2" runat="server" DataKeyField="uyeID" 
+                        style="color: #3B5998" BorderStyle="None" CaptionAlign="Top">
+                        <HeaderTemplate>
+                            Arkadaşların
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <table align="center" cellpadding="0" cellspacing="0" 
+    class="style9">
+                                <tr>
+                                    <td>
+                                        <img alt="" src="images/<%#Eval("foto")%>" style="height: 67px; width: 73px" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:Label ID="Label5" runat="server" ><%#Eval("adi")%></asp:Label>
+                                        &nbsp;<asp:Label ID="Label6" runat="server" ><%#Eval("soyadi")%></asp:Label>
+                                    </td>
+                                    <td>
+                                    <a href="mesaj.aspx?alici=<%#Eval("uyeID")%>" >mesaj gönder</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </ItemTemplate>
+                    </asp:DataList>
+                </td>
+                <td colspan="3">
+                    &nbsp;</td>
+            </tr>
+            </table>
+    </div>
+    </form>
+</body>
+</html>
